@@ -6,4 +6,14 @@ const movieDao =
     ...require('./api/movieDao')
 }
 
-module.exports = {movieDao}
+const actorDao = 
+{
+    ...daoCommon,
+    ...require('./api/actorDao')
+}
+
+module.exports = 
+{
+    movieDao,
+    actorDao
+}
