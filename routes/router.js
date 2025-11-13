@@ -24,13 +24,26 @@ router.get('/api', (req, res)=>
 })
 
 //endpoint
-router.use('/api/movie', require('./api/movieRoutes'))
-router.use('/api/actor', require('./api/actorRoutes'))
-router.use('/api/director', require('./api/directorRoutes'))
-router.use('/api/genre', require('./api/genreRoutes'))
-router.use('/api/production', require('./api/productionRoutes'))
-router.use('/api/streaming_platform', require('./api/streaming_platformRoutes'))
+// router.use('/api/movie', require('./api/movieRoutes'))
+// router.use('/api/actor', require('./api/actorRoutes'))
+// router.use('/api/director', require('./api/directorRoutes'))
+// router.use('/api/genre', require('./api/genreRoutes'))
+// router.use('/api/production', require('./api/productionRoutes'))
+// router.use('/api/streaming_platform', require('./api/streaming_platformRoutes'))
+const endpoints = 
+[
+    'movie',
+    'actor',
+    'director',
+    'genre',
+    'production',
+    'streaming_platform'
+]
 
+endpoints.forEach(endpoint =>
+{
+    router.use(`/api/${endpoint}`, require(`./api/${endpoint}Routes`))
+})
 
 //error handling
 router.use((req, res, next)=>
