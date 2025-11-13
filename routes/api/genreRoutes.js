@@ -12,7 +12,7 @@ router.get('/search', (req, res)=>
 //http:localhost:3000/api/director
 router.get('/', (req, res)=>
 {
-    dao.findMoviesByDirector(res, dao.table, req.params.id)
+    dao.findMoviesByGenre(res, dao.table, req.params.id)
 })
 
 router.get('/sort/:sorter', (req, res)=> 
