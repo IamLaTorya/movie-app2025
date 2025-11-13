@@ -15,13 +15,17 @@ router.get('/api', (req, res)=>
     res.json(
     {
         'All Movies': `http://localhost:${port}/api/movie`,
-        'All Actors': `http://localhost:${port}/api/actor`
+        'All Actors': `http://localhost:${port}/api/actor`,
+        'All Directors': `http://localhost:${port}/api/director`
     })
 })
 
 //endpoint
 router.use('/api/movie', require('./api/movieRoutes'))
-router.use('/api/actor', require('./api/actorRoutes'))    
+router.use('/api/actor', require('./api/actorRoutes'))
+router.use('/api/director', require('./api/directorRoutes'))
+
+
 //error handling
 router.use((req, res, next)=>
 {

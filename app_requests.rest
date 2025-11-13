@@ -4,4 +4,4 @@
 
 # GET http://localhost:3000/api/movie/sort/yr_released
 
-GET http:/localhost:3000/api/actor
+GET http://localhost:3000/api/
