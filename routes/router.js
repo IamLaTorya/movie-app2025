@@ -17,7 +17,8 @@ router.get('/api', (req, res)=>
         'All Movies': `http://localhost:${port}/api/movie`,
         'All Actors': `http://localhost:${port}/api/actor`,
         'All Directors': `http://localhost:${port}/api/director`,
-        'All Genres': `http://localhost:${port}/api/genre`
+        'All Genres': `http://localhost:${port}/api/genre`,
+        'All Productions': `http://localhost:${port}/api/production`
     })
 })
 
@@ -26,6 +27,7 @@ router.use('/api/movie', require('./api/movieRoutes'))
 router.use('/api/actor', require('./api/actorRoutes'))
 router.use('/api/director', require('./api/directorRoutes'))
 router.use('/api/genre', require('./api/genreRoutes'))
+router.use('/api/production', require('./api/productionRoutes'))
 
 
 //error handling
