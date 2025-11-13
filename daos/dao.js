@@ -24,10 +24,24 @@ const genreDao =
     ...require('./api/genreDao')
 }
 
+const productionDao =
+{
+    ...daoCommon,
+    ...require('./api/productionDao')
+}
+
+const streaming_platformDao =
+{
+    ...daoCommon,
+    ...require('./api/streaming_platformDao')
+}
+
 module.exports = 
 {
     movieDao,
     actorDao,
     directorDao,
-    genreDao
+    genreDao,
+    productionDao,
+    streaming_platformDao
 }

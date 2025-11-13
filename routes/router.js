@@ -18,7 +18,8 @@ router.get('/api', (req, res)=>
         'All Actors': `http://localhost:${port}/api/actor`,
         'All Directors': `http://localhost:${port}/api/director`,
         'All Genres': `http://localhost:${port}/api/genre`,
-        'All Productions': `http://localhost:${port}/api/production`
+        'All Productions': `http://localhost:${port}/api/production`,
+        'All Streaming Platforms': `http://localhost:${port}/api/streaming_platform`
     })
 })
 
@@ -28,6 +29,7 @@ router.use('/api/actor', require('./api/actorRoutes'))
 router.use('/api/director', require('./api/directorRoutes'))
 router.use('/api/genre', require('./api/genreRoutes'))
 router.use('/api/production', require('./api/productionRoutes'))
+router.use('/api/streaming_platform', require('./api/streaming_platformRoutes'))
 
 
 //error handling
