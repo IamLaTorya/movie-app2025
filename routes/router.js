@@ -21,7 +21,7 @@ router.get('/api', (req, res)=>
 
 //endpoint
 router.use('/api/movie', require('./api/movieRoutes'))
-router.use('/api/artist', require('./api/actorRoutes'))    
+router.use('/api/actor', require('./api/actorRoutes'))    
 //error handling
 router.use((req, res, next)=>
 {

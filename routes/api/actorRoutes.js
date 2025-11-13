@@ -3,7 +3,7 @@ const { actorDao : dao} = require('../../daos/dao')
 
 router.get('/', (req, res)=> 
 {
-    dao.findMovieInfo(res, dao.table)
+    dao.findAll(res, dao.table)
 })
 router.get('/search', (req, res)=>
 {

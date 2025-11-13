@@ -4,7 +4,7 @@ const { queryAction } = require('../../helpers/queryAction')
 const daoCommon = 
 {
 
-    findAll: (req, res, table)=> 
+    findAll: (res, table)=> 
         {
         con.execute(
             `SELECT * FROM ${table};`,
