@@ -36,8 +36,18 @@ const daoCommon =
             }
         )
     },
+    countAll: (res, table)=>
+    {
+        con.execute(
+            `SELECT COUNT(*) as total_count FROM ${table};`,
+            (error, rows)=>
+            {
+                queryAction(res, error, rows, table)
+            }
+        )
+    },
 
-create: (req, res, table)=>
+    create: (req, res, table)=>
     {
         if(Object.keys(req.body).length ===0)
             //Object.keys(obj) => array of keys

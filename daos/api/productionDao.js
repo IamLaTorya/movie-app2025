@@ -1,14 +1,15 @@
 const con = require('../../config/dbconfig')
 const { queryAction } = require('../../helpers/queryAction')
+const { search } = require('./movieDao')
 
 const productionDao = 
 {
     table: 'production',
 
-    //methods that are particular to the artist table
+    //methods that are particular to the production table
 
-    //find albums by artist
-    findMoviesByProduction: (res, table, id)=>
+    //find movies by production
+    findMoviesByProduction: (req, res, table, id)=>
     {
         let movies = []
         //this is a query
@@ -59,6 +60,10 @@ const productionDao =
                 }
             }
         )
+    },
+    search: (req, res, table)=>
+    {
+        `SELECT * FROM movie WHERE production LIKE `
     }
 }
 

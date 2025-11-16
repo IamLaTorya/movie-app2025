@@ -13,7 +13,7 @@ const actorDao =
         const movies = []
 
         // let sql = `SELECT * FROM movie m JOIN movie_to_${table} USING (movie_id) JOIN ${table} USING (${table}_id) WHERE ${table}_id = ${id};`
-        let sql = `SELECT a.actor_id, a.first_name, a.last_name, m.movie_id, m.title FROM actors a JOIN actor_to_movie am ON a.actor_id = am.actor_id JOIN movies m ON am.movie_id = m.movie_id ORDER BY a.first_name, m.title;`
+        let sql = `SELECT actor_id, first_name, last_name, title FROM actor;`
 
         con.execute(
             sql,

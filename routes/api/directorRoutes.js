@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { actorDao : dao} = require('../../daos/dao')
+const { directorDao : dao} = require('../../daos/dao')
 
 router.get('/', (req, res)=> 
 {
@@ -18,11 +18,6 @@ router.get('/', (req, res)=>
 router.get('/sort/:sorter', (req, res)=> 
 {
     dao.sort(res, dao.table, req.params.sorter)
-})
-
-router.get('/search', (req, res)=>
-{
-    dao.search(req, res, dao.table)
 })
 
 router.get('/:id', (req, res)=> 

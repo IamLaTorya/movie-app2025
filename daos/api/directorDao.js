@@ -1,13 +1,10 @@
 const con = require('../../config/dbconfig')
 const { queryAction } = require('../../helpers/queryAction')
 
-const directorDao = 
-{
+const directorDao = {
     table: 'director',
 
-    //methods that are particular to the artist table
-
-        search: (req, res, table)=> {
+    search: (req, res, table)=> {
 
         let sql = ''
 
@@ -42,7 +39,7 @@ const directorDao =
         // store movies from a director into an array and send with response
         const movies = []
 
-        let sql = `SELECT movie_to_director FROM movies ORDERED BY Director;`
+        let sql = `SELECT * FROM movie m JOIN movie_to_${table} USING (movie_id) JOIN ${table} USING (${table}_id) WHERE ${table}_id = ${id};`
 
         con.execute(
             sql,

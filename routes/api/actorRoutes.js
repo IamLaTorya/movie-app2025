@@ -12,17 +12,12 @@ router.get('/search', (req, res)=>
 //http:localhost:3000/api/actor
 router.get('/', (req, res)=>
 {
-    dao.findMovieByActor(res, dao.table, req.params.id)
+    dao.findMoviesByActor(res, dao.table, req.params.id)
 })
 
 router.get('/sort/:sorter', (req, res)=> 
 {
     dao.sort(res, dao.table, req.params.sorter)
-})
-
-router.get('/search', (req, res)=>
-{
-    dao.search(req, res, dao.table)
 })
 
 router.get('/:id', (req, res)=> 
