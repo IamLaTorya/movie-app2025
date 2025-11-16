@@ -12,7 +12,7 @@ const productionDao =
     {
         let movies = []
         //this is a query
-        let sql = `SELECT m.movie_id, m.title, m.yr_released FROM movie WHERE a.actor_id = ${id};`
+        let sql = `SELECT = ${id};`
         //.execute(query, callback function)
         //.execute(query, array, callback function)
         con.execute(
