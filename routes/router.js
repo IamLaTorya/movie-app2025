@@ -6,9 +6,24 @@ const port = process.env.port || 3000
 //http://localhost:3000
 router.get('/', (req, res)=>
 {
-    res.send('<h1>Movie App</h1>')
+    //res.send('<h1>Movie App</h1>')
+    res.render('pages/home',
+    {
+        title: 'movie-app home',
+        name: "LaTorya's Movie App"
+    })
 })
 
+//Actor-Form => http://localhost:3000/actor-form
+router.get('/actor-form', (req, res)=>
+{
+    res.render('pages/actor-form',
+        {
+            title: 'actor form',
+            name: 'actor-form'
+        }
+    )
+})
 //root route => http://localhost:3000/api
 router.get('/api', (req, res)=>
 {
@@ -49,7 +64,12 @@ endpoints.forEach(endpoint =>
 router.use((req, res, next)=>
 {
     res.status(404)
-    .send('<h3>404 ERROR:</h3><h1> THIS PAGE DOES NOT EXIST!</h1>')
+    //.send('<h3>404 ERROR:</h3><h1> THIS PAGE DOES NOT EXIST!</h1>')
+    .render('pages/error',
+    {
+        title: 'Error Page',
+        name: 'Error'
+    })
 })
 
 module.exports = router

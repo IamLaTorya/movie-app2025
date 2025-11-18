@@ -5,10 +5,12 @@ router.get('/', (req, res)=>
 {
     dao.findAll(res, dao.table)
 })
+
 router.get('/search', (req, res)=>
 {
     dao.search(req, res, dao.table)
 })
+
 //http:localhost:3000/api/actor
 router.get('/', (req, res)=>
 {
@@ -24,11 +26,23 @@ router.get('/:id', (req, res)=>
 {
     dao.findById(res, dao.table, req.params.id)
 })
+
 router.get('/count', (req, res)=> 
 {
     dao.countAll(res, dao.table)
 })
 
+//POST
+//http://localhost:3000/api/actor/create
+router.post('/create', (req, res)=>
+{
+    dao.create(req, res, dao.table)
+})
 
+//PATCH
+router.patch('/update/:id', (req, res)=>
+{
+    dao.update(req, res, dao.table)
+})
 
 module.exports = router
