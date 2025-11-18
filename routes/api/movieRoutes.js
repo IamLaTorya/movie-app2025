@@ -25,6 +25,12 @@ router.get('/count', (req, res)=>
     dao.countAll(res, dao.table)
 })
 
+//POST
+//http://localhost:3000/api/production/create
+router.post('/create', (req, res)=>
+{
+    dao.create(req, res, dao.table)
+})
 
 //PATCH
 router.patch('/update/:id', (req, res)=>
