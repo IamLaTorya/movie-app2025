@@ -24,6 +24,17 @@ router.get('/actor-form', (req, res)=>
         }
     )
 })
+
+//Director-Form => http://localhost:3000/director-form
+router.get('/director-form', (req, res)=>
+{
+    res.render('pages/director-form',
+        {
+            title: 'director form',
+            name: 'director form'
+        }
+    )
+})
 //root route => http://localhost:3000/api
 router.get('/api', (req, res)=>
 {
