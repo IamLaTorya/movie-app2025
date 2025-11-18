@@ -35,6 +35,17 @@ router.get('/director-form', (req, res)=>
         }
     )
 })
+
+//Genre-Form => http://localhost:3000/genre-form
+router.get('/genre-form', (req, res)=>
+{
+    res.render('pages/genre-form', 
+        {
+            title: 'genre form',
+            name: 'genre-form'
+        }
+    )
+})
 //root route => http://localhost:3000/api
 router.get('/api', (req, res)=>
 {
